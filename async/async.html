@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // navigator.geolocation.getCurrentPosition(function (pos) {
+        //     console.log('Works');
+        //     console.log(pos);
+
+        // }, function (err) {
+        //     console.log(`Fail`);
+        //     console.log(err);
+        // })
+
+        function getCurrentPosition() {
+            return new Promise((resolve, reject) => {
+                navigator.geolocation.getCurrentPosition(resolve, reject)
+            })
+        }
+
+        async function go() {
+            const position = await getCurrentPosition()
+            console.log(position)
+        }
+        go()
+    </script>
+</body>
+
+</html>
